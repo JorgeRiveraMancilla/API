@@ -1,6 +1,5 @@
 using API.Data;
-using API.DTOs.PrimeraPeticion;
-using API.Entities;
+using API.DTOs.FirstRequest;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Microsoft.AspNetCore.Mvc;
@@ -20,27 +19,38 @@ namespace API.Controllers
         }
 
         [HttpGet("1")]
-        public async Task<ActionResult<List<Object>>> PrimeraPeticion()
+        public async Task<ActionResult<List<UserDto>>> FirstRequest()
         {
             var users = await _dataContext.Users
                 .Include(u => u.Reserves)
-                .ThenInclude(r => r.AppBook)
+                .ThenInclude(r => r.Book)
                 .ProjectTo<UserDto>(_mapper.ConfigurationProvider)
                 .ToListAsync();
             
+            DateTime currentDate = DateTime.Now;
+            
+            foreach (var user in users)
+            {
+                int quantityReservesCurrentMonth = 0;
+                
+                foreach (var reserve in user.Reserves)
+                {
+                    if (reserve.ReservedAt.Month == currentDate.Month && reserve.ReservedAt.Year == currentDate.Year)
+                    {
+                        quantityReservesCurrentMonth++;
+                    }
+                }
+
+                user.QuantityReservesCurrentMonth = quantityReservesCurrentMonth;
+            }
+
             return Ok(users);
         }
 
         [HttpGet("2")]
-        public async Task<ActionResult<List<Object>>> SegundaPeticion()
+        public async Task SecondRequest()
         {
-            var users = await _dataContext.Users
-                .Include(u => u.Reserves)
-                .ThenInclude(r => r.AppBook)
-                .ProjectTo<UserDto>(_mapper.ConfigurationProvider)
-                .ToListAsync();
             
-            return Ok(users);
         }
     }
 }

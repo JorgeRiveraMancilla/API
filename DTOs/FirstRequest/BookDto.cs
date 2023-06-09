@@ -1,4 +1,4 @@
-namespace API.DTOs.PrimeraPeticion
+namespace API.DTOs.FirstRequest
 {
     public class BookDto
     {

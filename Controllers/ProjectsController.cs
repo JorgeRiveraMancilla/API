@@ -1,12 +1,4 @@
-﻿using API.Data;
-using API.DTOs;
-using API.Entities;
-using AutoMapper;
-using AutoMapper.QueryableExtensions;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-
-namespace API.Controllers
+﻿namespace API.Controllers
 {
     public class ProjectsController : BaseApiController
     {

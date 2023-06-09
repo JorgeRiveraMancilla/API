@@ -1,17 +1,32 @@
 [
     {
-        "Code": "Codigo usuario 1",
-        "Name": "Nombre usuario 1",
-        "Faculty": "Facultad usuario 1"
+        "Code": "USER_CODE_1",
+        "Name": "Jorge Rivera",
+        "Faculty": "Universidad Católica del Norte"
     },
     {
-        "Code": "Codigo usuario 2",
-        "Name": "Nombre usuario 2",
-        "Faculty": "Facultad usuario 2"
+        "Code": "USER_CODE_2",
+        "Name": "María López",
+        "Faculty": "Universidad de Santiago"
     },
     {
-        "Code": "Codigo usuario 3",
-        "Name": "Nombre usuario 3",
-        "Faculty": "Facultad usuario 3"
+        "Code": "USER_CODE_3",
+        "Name": "Pedro Torres",
+        "Faculty": "Universidad de Concepción"
+    },
+    {
+        "Code": "USER_CODE_4",
+        "Name": "Ana García",
+        "Faculty": "Universidad Nacional Autónoma de México"
+    },
+    {
+        "Code": "USER_CODE_5",
+        "Name": "David Lee",
+        "Faculty": "Stanford University"
+    },
+    {
+        "Code": "USER_CODE_6",
+        "Name": "Sophie Martin",
+        "Faculty": "University of Cambridge"
     }
 ]

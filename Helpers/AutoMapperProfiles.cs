@@ -1,4 +1,4 @@
-using API.DTOs.PrimeraPeticion;
+using API.DTOs.FirstRequest;
 using API.Entities;
 using AutoMapper;
 

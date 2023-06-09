@@ -34,11 +34,11 @@ namespace API.Data
                 return;
             }
 
-            var bookData = await File.ReadAllTextAsync("Data/Seeder/BookSeedData.json");
+            var booksData = await File.ReadAllTextAsync("Data/Seeder/BookSeedData.json");
 
             var options = new JsonSerializerOptions{PropertyNameCaseInsensitive = true};
 
-            var books = JsonSerializer.Deserialize<List<AppBook>>(bookData, options);
+            var books = JsonSerializer.Deserialize<List<AppBook>>(booksData, options);
 
             foreach (var book in books)
             {
@@ -50,7 +50,7 @@ namespace API.Data
 
         public static async Task SeedData(DataContext dataContext)
         {
-            if (await dataContext.Users.AnyAsync() |  await dataContext.Books.AnyAsync())
+            if (await dataContext.Reserves.AnyAsync())
             {
                 return;
             }
@@ -58,13 +58,35 @@ namespace API.Data
             await SeedUsers(dataContext);
             await SeedBooks(dataContext);
 
-            AppReserve reserve = new AppReserve
-            {
-                AppUser = await dataContext.Users.FindAsync(1),
-                AppBook = await dataContext.Books.FindAsync(1)
-            };
+            int quantityUsers = await dataContext.Users.CountAsync();
+            int quantityBooks = await dataContext.Users.CountAsync();
+            Random random = new Random();
 
-            await dataContext.Reserves.AddAsync(reserve);
+            for (int userId = 1; userId < quantityUsers + 1; userId++)
+            {
+                AppUser user = await dataContext.Users.FindAsync(userId);
+                int n = random.Next(quantityBooks);
+
+                for (int j = 0; j < n; j++)
+                {
+                    int bookId = random.Next(1, quantityBooks + 1);
+                    AppBook book = await dataContext.Books.FindAsync(bookId);
+
+                    DateTime start = new DateTime(1995, 1, 1);
+                    int range = (DateTime.Today - start).Days;           
+                    start = start.AddDays(random.Next(range));
+
+                    AppReserve reserve = new AppReserve
+                    {
+                        ReservedAt = start,
+                        User = user,
+                        Book = book
+                    };
+
+                    await dataContext.Reserves.AddAsync(reserve);
+                }
+            }
+
             await dataContext.SaveChangesAsync();
         }
     }

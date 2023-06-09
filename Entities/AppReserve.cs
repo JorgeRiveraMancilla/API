@@ -3,9 +3,10 @@ namespace API.Entities
     public class AppReserve
     {
         public int Id { get; set; }
-        public int AppUserId { get; set; }
-        public AppUser AppUser { get; set; }
-        public int AppBookId { get; set; }
-        public AppBook AppBook { get; set; }
+        public DateTime ReservedAt { get; set; }
+        public int UserId { get; set; }
+        public AppUser User { get; set; }
+        public int BookId { get; set; }
+        public AppBook Book { get; set; }
     }
 }

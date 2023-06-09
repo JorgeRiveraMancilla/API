@@ -1,20 +1,32 @@
 [
     {
-        "Code": "Codigo libro 1",
-        "Name": "Nombre libro 1",
-        "Title": "Titulo libro 1",
-        "Description": "Descripcion libro 1"
+        "Code": "BOOK_CODE_1",
+        "Title": "Álgebra Lineal",
+        "Description": "El mejor libro de álgebra lineal"
     },
     {
-        "Code": "Codigo libro 2",
-        "Name": "Nombre libro 2",
-        "Title": "Titulo libro 2",
-        "Description": "Descripcion libro 2"
+        "Code": "BOOK_CODE_2",
+        "Title": "Cálculo Diferencial",
+        "Description": "Un libro completo sobre cálculo diferencial"
     },
     {
-        "Code": "Codigo libro 3",
-        "Name": "Nombre libro 3",
-        "Title": "Titulo libro 3",
-        "Description": "Descripcion libro 3"
+        "Code": "BOOK_CODE_3",
+        "Title": "Introducción a la Programación",
+        "Description": "Aprende los conceptos básicos de la programación"
+    },
+    {
+        "Code": "BOOK_CODE_4",
+        "Title": "Física Moderna",
+        "Description": "Un enfoque moderno sobre la física"
+    },
+    {
+        "Code": "BOOK_CODE_5",
+        "Title": "Historia del Arte",
+        "Description": "Un recorrido por la historia del arte mundial"
+    },
+    {
+        "Code": "BOOK_CODE_6",
+        "Title": "Química Orgánica",
+        "Description": "Un libro para entender los compuestos orgánicos"
     }
 ]
