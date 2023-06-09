@@ -1,0 +1,20 @@
+[
+    {
+        "Code": "Codigo libro 1",
+        "Name": "Nombre libro 1",
+        "Title": "Titulo libro 1",
+        "Description": "Descripcion libro 1"
+    },
+    {
+        "Code": "Codigo libro 2",
+        "Name": "Nombre libro 2",
+        "Title": "Titulo libro 2",
+        "Description": "Descripcion libro 2"
+    },
+    {
+        "Code": "Codigo libro 3",
+        "Name": "Nombre libro 3",
+        "Title": "Titulo libro 3",
+        "Description": "Descripcion libro 3"
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "Code": "Codigo usuario 1",
+        "Name": "Nombre usuario 1",
+        "Faculty": "Facultad usuario 1"
+    },
+    {
+        "Code": "Codigo usuario 2",
+        "Name": "Nombre usuario 2",
+        "Faculty": "Facultad usuario 2"
+    },
+    {
+        "Code": "Codigo usuario 3",
+        "Name": "Nombre usuario 3",
+        "Faculty": "Facultad usuario 3"
+    }
+]
