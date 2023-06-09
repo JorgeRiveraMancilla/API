@@ -28,5 +28,25 @@
         "Code": "BOOK_CODE_6",
         "Title": "Química Orgánica",
         "Description": "Un libro para entender los compuestos orgánicos"
+    },
+    {
+        "Code": "BOOK_CODE_7",
+        "Title": "Introducción a la Economía",
+        "Description": "Un libro básico sobre los principios económicos"
+    },
+    {
+        "Code": "BOOK_CODE_8",
+        "Title": "Psicología del Desarrollo",
+        "Description": "Explora los procesos psicológicos en el desarrollo humano"
+    },
+    {
+        "Code": "BOOK_CODE_9",
+        "Title": "Literatura Universal",
+        "Description": "Una selección de obras literarias destacadas de diferentes culturas"
+    },
+    {
+        "Code": "BOOK_CODE_10",
+        "Title": "Anatomía Humana",
+        "Description": "Un estudio detallado de la estructura del cuerpo humano"
     }
 ]

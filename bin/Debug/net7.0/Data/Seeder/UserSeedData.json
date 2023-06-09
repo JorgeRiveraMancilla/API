@@ -28,5 +28,25 @@
         "Code": "USER_CODE_6",
         "Name": "Sophie Martin",
         "Faculty": "University of Cambridge"
+    },
+    {
+        "Code": "USER_CODE_7",
+        "Name": "Carlos Fernández",
+        "Faculty": "Universidad de Buenos Aires"
+    },
+    {
+        "Code": "USER_CODE_8",
+        "Name": "Emily Wang",
+        "Faculty": "Harvard University"
+    },
+    {
+        "Code": "USER_CODE_9",
+        "Name": "Luis Morales",
+        "Faculty": "Pontificia Universidad Católica de Chile"
+    },
+    {
+        "Code": "USER_CODE_11",
+        "Name": "Marta Rodríguez",
+        "Faculty": "Universidad Complutense de Madrid"
     }
 ]

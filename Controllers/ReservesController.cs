@@ -1,5 +1,4 @@
 using API.Data;
-using API.DTOs.FirstRequest;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Microsoft.AspNetCore.Mvc;
@@ -19,38 +18,51 @@ namespace API.Controllers
         }
 
         [HttpGet("1")]
-        public async Task<ActionResult<List<UserDto>>> FirstRequest()
+        public async Task<ActionResult<List<DTOs.FirstRequest.UserDto>>> FirstRequest()
         {
             var users = await _dataContext.Users
                 .Include(u => u.Reserves)
                 .ThenInclude(r => r.Book)
-                .ProjectTo<UserDto>(_mapper.ConfigurationProvider)
+                .ProjectTo<DTOs.FirstRequest.UserDto>(_mapper.ConfigurationProvider)
                 .ToListAsync();
             
             DateTime currentDate = DateTime.Now;
             
             foreach (var user in users)
             {
-                int quantityReservesCurrentMonth = 0;
+                int quantity = 0;
+                DateTime maxDate = DateTime.MinValue;
                 
                 foreach (var reserve in user.Reserves)
                 {
                     if (reserve.ReservedAt.Month == currentDate.Month && reserve.ReservedAt.Year == currentDate.Year)
                     {
-                        quantityReservesCurrentMonth++;
+                        quantity++;
+                    }
+
+                    if (maxDate < reserve.ReservedAt)
+                    {
+                        maxDate = reserve.ReservedAt;
                     }
                 }
 
-                user.QuantityReservesCurrentMonth = quantityReservesCurrentMonth;
+                user.QuantityReservesCurrentMonth = quantity;
+                user.DateLastReserve = maxDate;
             }
 
             return Ok(users);
         }
 
         [HttpGet("2")]
-        public async Task SecondRequest()
+        public async Task<ActionResult<List<DTOs.SecondRequest.BookDto>>> SecondRequest()
         {
+            var books = await _dataContext.Books
+                .Include(b => b.Reserves)
+                .ThenInclude(r => r.User)
+                .ProjectTo<DTOs.SecondRequest.BookDto>(_mapper.ConfigurationProvider)
+                .ToListAsync();
             
+            return Ok(books);
         }
     }
 }
