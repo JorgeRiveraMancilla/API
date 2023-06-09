@@ -65,3 +65,4 @@ C:\Users\jiriv\RiderProjects\API\bin\Debug\net7.0\AutoMapper.dll
 C:\Users\jiriv\RiderProjects\API\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\jiriv\RiderProjects\API\bin\Debug\net7.0\Data\Seeder\BookSeedData.json
 C:\Users\jiriv\RiderProjects\API\bin\Debug\net7.0\Data\Seeder\UserSeedData.json
+C:\Users\jiriv\RiderProjects\API\bin\Debug\net7.0\Práctica 3.postman_collection.json
