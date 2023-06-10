@@ -6,6 +6,9 @@ namespace API.Data
 {
     public class Seed
     {
+        private const int START_YEAR = 2023;
+        private const int START_MONTH = 1;
+        private const int START_DAY = 1;
         public static async Task SeedUsers(DataContext dataContext)
         {
             if (await dataContext.Users.AnyAsync())
@@ -72,7 +75,7 @@ namespace API.Data
                     int bookId = random.Next(1, quantityBooks + 1);
                     AppBook book = await dataContext.Books.FindAsync(bookId);
 
-                    DateTime start = new DateTime(1995, 1, 1);
+                    DateTime start = new DateTime(START_YEAR, START_MONTH, START_DAY);
                     int range = (DateTime.Today - start).Days;           
                     start = start.AddDays(random.Next(range));
 
