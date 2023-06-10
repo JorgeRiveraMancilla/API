@@ -7,7 +7,7 @@ namespace API.Data
     public class Seed
     {
         private const int START_YEAR = 2023;
-        private const int START_MONTH = 1;
+        private const int START_MONTH = 4;
         private const int START_DAY = 1;
         public static async Task SeedUsers(DataContext dataContext)
         {
